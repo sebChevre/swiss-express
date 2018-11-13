@@ -1,0 +1,6 @@
+spring:
+  data:
+    neo4j:
+       uri: bolt://node4479-neo4j.jcloud.ik-server.com:11023
+       username: neo4j
+       password: esteban11

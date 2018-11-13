@@ -1,0 +1,6 @@
+server:
+  port: 9900
+
+spring:
+  profiles:
+    active: jelastic
