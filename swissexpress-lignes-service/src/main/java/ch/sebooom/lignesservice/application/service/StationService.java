@@ -15,6 +15,8 @@ public interface StationService {
 
     void insertLigne1Data ();
 
+    void insertLigne2Data ();
+
     void insertLigne4Data ();
 
     Optional<Station> findById(String stationId);

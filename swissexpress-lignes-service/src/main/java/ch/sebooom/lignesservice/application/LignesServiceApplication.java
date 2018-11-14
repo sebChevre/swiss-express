@@ -26,6 +26,7 @@ public class LignesServiceApplication {
     public void initData () {
 
         stationService.insertLigne1Data();
+        stationService.insertLigne2Data();
         stationService.insertLigne4Data();
     }
 

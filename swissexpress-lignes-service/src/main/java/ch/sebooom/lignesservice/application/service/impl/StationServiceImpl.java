@@ -137,21 +137,21 @@ public class StationServiceImpl implements StationService {
         stationRepository.save(geneve);
     }
 
-    public void insertLigne4Data () {
+    public void insertLigne2Data () {
 
 
         Station bale = stationRepository.findByIdentifiant("BAL").get();
 
-        Station berne = new Station();
-        berne.setNom("Berne");
-        berne.setIdentifiant("BER");
-        stationRepository.save(berne);
+        Station zurich = new Station();
+        zurich.setNom("Zurich");
+        zurich.setIdentifiant("ZUR");
+        stationRepository.save(zurich);
 
         Segment se = new Segment();
         se.setDepart(bale);
-        se.setArrivee(berne);
-        se.setDistance(38);
-        se.setLigne("Ligne 4");
+        se.setArrivee(zurich);
+        se.setDistance(71);
+        se.setLigne("Ligne 2");
 
         se.setDeparts(new String[]{"05:30"});
 
@@ -160,8 +160,132 @@ public class StationServiceImpl implements StationService {
         stationRepository.save(bale);
 
         se = new Segment();
-        se.setDepart(berne);
+        se.setDepart(zurich);
         se.setArrivee(bale);
+        se.setDistance(71);
+        se.setLigne("Ligne 2");
+        se.setDeparts(new String[]{"05:30","07:00","08:30"});
+
+
+        zurich.setConnections(Arrays.asList(se));
+        stationRepository.save(zurich);
+
+
+        Station coire = new Station();
+        coire.setNom("Coire");
+        coire.setIdentifiant("COI");
+        stationRepository.save(coire);
+
+        se = new Segment();
+        se.setDepart(zurich);
+        se.setArrivee(coire);
+        se.setDistance(97);
+        se.setLigne("Ligne 2");
+        se.setDeparts(new String[]{"05:30"});
+
+        zurich.setConnections(Arrays.asList(se));
+        stationRepository.save(zurich);
+
+        se = new Segment();
+        se.setDepart(coire);
+        se.setArrivee(zurich);
+        se.setDistance(97);
+        se.setLigne("Ligne 2");
+        se.setDeparts(new String[]{"05:30"});
+
+        coire.setConnections(Arrays.asList(se));
+        stationRepository.save(coire);
+
+
+    }
+
+    public void insertLigne3Data () {
+
+
+        Station neuchatel = stationRepository.findByIdentifiant("NEU").get();
+
+        Station berne = new Station();
+        berne.setNom("Berne");
+        berne.setIdentifiant("BER");
+        stationRepository.save(berne);
+
+        Segment se = new Segment();
+        se.setDepart(neuchatel);
+        se.setArrivee(berne);
+        se.setDistance(38);
+        se.setLigne("Ligne 4");
+
+        se.setDeparts(new String[]{"05:30"});
+
+        neuchatel.setConnections(Arrays.asList(se));
+
+        stationRepository.save(neuchatel);
+
+        se = new Segment();
+        se.setDepart(berne);
+        se.setArrivee(neuchatel);
+        se.setDistance(38);
+        se.setLigne("Ligne 4");
+        se.setDeparts(new String[]{"05:30","07:00","08:30"});
+
+
+        berne.setConnections(Arrays.asList(se));
+        stationRepository.save(berne);
+
+        Station lucerne = new Station();
+        lucerne.setNom("Lucerne");
+        lucerne.setIdentifiant("LUC");
+        stationRepository.save(lucerne);
+
+        se = new Segment();
+        se.setDepart(berne);
+        se.setArrivee(lucerne);
+        se.setDistance(67);
+        se.setLigne("Ligne 4");
+        se.setDeparts(new String[]{"05:30"});
+
+        berne.setConnections(Arrays.asList(se));
+        stationRepository.save(berne);
+
+        se = new Segment();
+        se.setDepart(lucerne);
+        se.setArrivee(berne);
+        se.setDistance(67);
+        se.setLigne("Ligne 1");
+        se.setDeparts(new String[]{"05:30"});
+
+        lucerne.setConnections(Arrays.asList(se));
+        stationRepository.save(lucerne);
+
+
+    }
+
+
+    public void insertLigne4Data () {
+
+
+        Station neuchatel = stationRepository.findByIdentifiant("NEU").get();
+
+        Station berne = new Station();
+        berne.setNom("Berne");
+        berne.setIdentifiant("BER");
+        stationRepository.save(berne);
+
+        Segment se = new Segment();
+        se.setDepart(neuchatel);
+        se.setArrivee(berne);
+        se.setDistance(38);
+        se.setLigne("Ligne 4");
+
+        se.setDeparts(new String[]{"05:30"});
+
+        neuchatel.setConnections(Arrays.asList(se));
+
+        stationRepository.save(neuchatel);
+
+        se = new Segment();
+        se.setDepart(berne);
+        se.setArrivee(neuchatel);
         se.setDistance(38);
         se.setLigne("Ligne 4");
         se.setDeparts(new String[]{"05:30","07:00","08:30"});
