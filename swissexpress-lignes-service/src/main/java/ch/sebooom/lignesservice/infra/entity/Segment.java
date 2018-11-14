@@ -6,6 +6,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.neo4j.ogm.annotation.*;
 
+import java.time.LocalTime;
+import java.util.List;
+
 @ToString
 @Setter
 @Getter
@@ -17,6 +20,11 @@ public class Segment {
     private Long id;
 
     private int distance;
+
+    private String ligne;
+
+    @Property(name = "test")
+    private String [] departs;
 
     @StartNode
     private Station depart;

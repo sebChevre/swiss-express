@@ -1,16 +1,19 @@
 package ch.sebooom.lignesservice.infra.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
+import org.neo4j.ogm.annotation.*;
 
 
 import java.util.List;
 
+@JsonIgnoreProperties(value = "connections")
 @ToString(exclude = "connections")
+@Getter
+@Setter
 @NodeEntity
 public class Station {
 
@@ -19,33 +22,13 @@ public class Station {
     @GeneratedValue
     Long id;
 
+    @Property(name = "identifiant")
+    private String identifiant;
+
+    @Property(name = "nom")
     private String nom;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
 
     @Relationship(type = "CONNECTE_A", direction = "OUTGOING")
     private List<Segment> connections;
 
-
-    public List<Segment> getConnections() {
-        return connections;
-    }
-
-    public void setConnections(List<Segment> connections) {
-        this.connections = connections;
-    }
 }
