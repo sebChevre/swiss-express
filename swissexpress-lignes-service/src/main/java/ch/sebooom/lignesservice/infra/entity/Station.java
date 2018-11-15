@@ -18,6 +18,16 @@ import java.util.List;
 public class Station {
 
     public Station () {}
+
+    private Station (String identifiant, String nom) {
+        this.identifiant = identifiant;
+        this.nom = nom;
+    }
+
+    public static Station from(String identifiant, String nom){
+        return new Station(identifiant,nom);
+    }
+
     @Id
     @GeneratedValue
     Long id;

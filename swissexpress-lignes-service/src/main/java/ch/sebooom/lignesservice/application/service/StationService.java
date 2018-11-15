@@ -5,23 +5,12 @@ import ch.sebooom.lignesservice.infra.entity.Segment;
 import ch.sebooom.lignesservice.infra.entity.Station;
 import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 public interface StationService {
 
 
     Collection findAll ();
-
-    void insertLigne1Data ();
-
-    void insertLigne2Data ();
-
-    void insertLigne3Data ();
-
-    void insertLigne4Data ();
-
-    void insertLigne5Data();
 
     Optional<Station> findById(String stationId);
 
