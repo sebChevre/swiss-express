@@ -313,7 +313,7 @@ public class StationServiceImpl implements StationService {
         se.setDepart(lucerne);
         se.setArrivee(berne);
         se.setDistance(67);
-        se.setLigne("Ligne 1");
+        se.setLigne("Ligne 4");
         se.setDeparts(new String[]{"05:30"});
 
         lucerne.setConnections(Arrays.asList(se));
