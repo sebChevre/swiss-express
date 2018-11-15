@@ -28,6 +28,8 @@ public class LignesServiceApplication {
         stationService.insertLigne1Data();
         stationService.insertLigne2Data();
         stationService.insertLigne4Data();
+        stationService.insertLigne3Data();
+        stationService.insertLigne5Data();
     }
 
 }

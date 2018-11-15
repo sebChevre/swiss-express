@@ -202,60 +202,80 @@ public class StationServiceImpl implements StationService {
     public void insertLigne3Data () {
 
 
-        Station neuchatel = stationRepository.findByIdentifiant("NEU").get();
-
-        Station berne = new Station();
-        berne.setNom("Berne");
-        berne.setIdentifiant("BER");
-        stationRepository.save(berne);
+        Station zurich = stationRepository.findByIdentifiant("ZUR").get();
+        Station lucerne = stationRepository.findByIdentifiant("LUC").get();
 
         Segment se = new Segment();
-        se.setDepart(neuchatel);
-        se.setArrivee(berne);
-        se.setDistance(38);
-        se.setLigne("Ligne 4");
-
-        se.setDeparts(new String[]{"05:30"});
-
-        neuchatel.setConnections(Arrays.asList(se));
-
-        stationRepository.save(neuchatel);
-
-        se = new Segment();
-        se.setDepart(berne);
-        se.setArrivee(neuchatel);
-        se.setDistance(38);
-        se.setLigne("Ligne 4");
-        se.setDeparts(new String[]{"05:30","07:00","08:30"});
-
-
-        berne.setConnections(Arrays.asList(se));
-        stationRepository.save(berne);
-
-        Station lucerne = new Station();
-        lucerne.setNom("Lucerne");
-        lucerne.setIdentifiant("LUC");
-        stationRepository.save(lucerne);
-
-        se = new Segment();
-        se.setDepart(berne);
+        se.setDepart(zurich);
         se.setArrivee(lucerne);
-        se.setDistance(67);
-        se.setLigne("Ligne 4");
+        se.setDistance(43);
+        se.setLigne("Ligne 3");
+
         se.setDeparts(new String[]{"05:30"});
 
-        berne.setConnections(Arrays.asList(se));
-        stationRepository.save(berne);
+        zurich.setConnections(Arrays.asList(se));
+
+        stationRepository.save(zurich);
 
         se = new Segment();
         se.setDepart(lucerne);
-        se.setArrivee(berne);
-        se.setDistance(67);
-        se.setLigne("Ligne 1");
+        se.setArrivee(zurich);
+        se.setDistance(43);
+        se.setLigne("Ligne 3");
+        se.setDeparts(new String[]{"05:30","07:00","08:30"});
+
+
+        lucerne.setConnections(Arrays.asList(se));
+        stationRepository.save(lucerne);
+
+
+        Station belizone = new Station();
+        belizone.setNom("Belinzone");
+        belizone.setIdentifiant("BEL");
+        stationRepository.save(belizone);
+
+        se = new Segment();
+        se.setDepart(lucerne);
+        se.setArrivee(belizone);
+        se.setDistance(115);
+        se.setLigne("Ligne 3");
         se.setDeparts(new String[]{"05:30"});
 
         lucerne.setConnections(Arrays.asList(se));
         stationRepository.save(lucerne);
+
+        se = new Segment();
+        se.setDepart(belizone);
+        se.setArrivee(lucerne);
+        se.setDistance(115);
+        se.setLigne("Ligne 3");
+        se.setDeparts(new String[]{"05:30"});
+
+        belizone.setConnections(Arrays.asList(se));
+        stationRepository.save(belizone);
+
+        Station lugano = new Station();
+        lugano.setNom("Lugano");
+        lugano.setIdentifiant("LUG");
+        stationRepository.save(lugano);
+
+        se = new Segment();
+        se.setDepart(lugano);
+        se.setArrivee(belizone);
+        se.setDistance(23);
+        se.setLigne("Ligne 3");
+        se.setDeparts(new String[]{"05:30"});
+        lugano.setConnections(Arrays.asList(se));
+        stationRepository.save(lugano);
+
+        se = new Segment();
+        se.setDepart(belizone);
+        se.setArrivee(lugano);
+        se.setDistance(23);
+        se.setLigne("Ligne 3");
+        se.setDeparts(new String[]{"05:30"});
+        belizone.setConnections(Arrays.asList(se));
+        stationRepository.save(belizone);
 
 
     }
@@ -318,6 +338,88 @@ public class StationServiceImpl implements StationService {
 
         lucerne.setConnections(Arrays.asList(se));
         stationRepository.save(lucerne);
+
+
+    }
+
+    public void insertLigne5Data () {
+
+
+        Station lausanne = stationRepository.findByIdentifiant("LAU").get();
+
+        Station sion = new Station();
+        sion.setNom("Sion");
+        sion.setIdentifiant("SIO");
+        stationRepository.save(sion);
+
+        Segment se = new Segment();
+        se.setDepart(lausanne);
+        se.setArrivee(sion);
+        se.setDistance(67);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30"});
+
+        lausanne.setConnections(Arrays.asList(se));
+        stationRepository.save(lausanne);
+
+        se = new Segment();
+        se.setDepart(sion);
+        se.setArrivee(lausanne);
+        se.setDistance(67);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30","07:00","08:30"});
+        sion.setConnections(Arrays.asList(se));
+        stationRepository.save(sion);
+
+        Station viege = new Station();
+        viege.setNom("Viege");
+        viege.setIdentifiant("VIE");
+        stationRepository.save(viege);
+
+        se = new Segment();
+        se.setDepart(sion);
+        se.setArrivee(viege);
+        se.setDistance(40);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30"});
+
+        sion.setConnections(Arrays.asList(se));
+        stationRepository.save(sion);
+
+        se = new Segment();
+        se.setDepart(viege);
+        se.setArrivee(sion);
+        se.setDistance(40);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30"});
+
+        viege.setConnections(Arrays.asList(se));
+        stationRepository.save(viege);
+
+        Station lugano = stationRepository.findByIdentifiant("LUG").get();
+
+        se = new Segment();
+        se.setDepart(viege);
+        se.setArrivee(lugano);
+        se.setDistance(88);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30"});
+
+        viege.setConnections(Arrays.asList(se));
+        stationRepository.save(viege);
+
+        se = new Segment();
+        se.setDepart(lugano);
+        se.setArrivee(viege);
+        se.setDistance(88);
+        se.setLigne("Ligne 5");
+        se.setDeparts(new String[]{"05:30"});
+
+        lugano.setConnections(Arrays.asList(se));
+        stationRepository.save(lugano);
+
+
+
 
 
     }

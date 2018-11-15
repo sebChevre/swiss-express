@@ -17,7 +17,11 @@ public interface StationService {
 
     void insertLigne2Data ();
 
+    void insertLigne3Data ();
+
     void insertLigne4Data ();
+
+    void insertLigne5Data();
 
     Optional<Station> findById(String stationId);
 
