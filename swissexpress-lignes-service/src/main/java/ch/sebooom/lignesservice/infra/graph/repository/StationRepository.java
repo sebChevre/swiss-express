@@ -1,7 +1,7 @@
-package ch.sebooom.lignesservice.infra.repository;
+package ch.sebooom.lignesservice.infra.graph.repository;
 
-import ch.sebooom.lignesservice.infra.entity.Segment;
-import ch.sebooom.lignesservice.infra.entity.Station;
+import ch.sebooom.lignesservice.infra.graph.entity.Segment;
+import ch.sebooom.lignesservice.infra.graph.entity.Station;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.repository.query.Param;

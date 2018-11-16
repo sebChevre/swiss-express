@@ -1,14 +1,12 @@
 package ch.sebooom.lignesservice.application.service.impl;
 
 import ch.sebooom.lignesservice.application.service.StationService;
-import ch.sebooom.lignesservice.infra.entity.Segment;
-import ch.sebooom.lignesservice.infra.entity.Station;
-import ch.sebooom.lignesservice.infra.repository.StationRepository;
+import ch.sebooom.lignesservice.infra.graph.entity.Segment;
+import ch.sebooom.lignesservice.infra.graph.entity.Station;
+import ch.sebooom.lignesservice.infra.graph.repository.StationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
@@ -417,10 +415,6 @@ public class StationServiceImpl implements StationService {
 
         lugano.setConnections(Arrays.asList(se));
         stationRepository.save(lugano);
-
-
-
-
 
     }
 

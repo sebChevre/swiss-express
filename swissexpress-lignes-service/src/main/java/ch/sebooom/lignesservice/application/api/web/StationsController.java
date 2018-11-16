@@ -1,8 +1,8 @@
 package ch.sebooom.lignesservice.application.api.web;
 
 import ch.sebooom.lignesservice.application.service.StationService;
-import ch.sebooom.lignesservice.infra.entity.Segment;
-import ch.sebooom.lignesservice.infra.entity.Station;
+import ch.sebooom.lignesservice.infra.graph.entity.Segment;
+import ch.sebooom.lignesservice.infra.graph.entity.Station;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
 import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/stations")

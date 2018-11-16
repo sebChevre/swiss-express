@@ -1,4 +1,4 @@
-package ch.sebooom.lignesservice.infra.entity;
+package ch.sebooom.lignesservice.infra.graph.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

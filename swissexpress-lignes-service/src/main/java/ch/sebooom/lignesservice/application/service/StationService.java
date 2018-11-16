@@ -1,11 +1,10 @@
 package ch.sebooom.lignesservice.application.service;
 
 
-import ch.sebooom.lignesservice.infra.entity.Segment;
-import ch.sebooom.lignesservice.infra.entity.Station;
+import ch.sebooom.lignesservice.infra.graph.entity.Segment;
+import ch.sebooom.lignesservice.infra.graph.entity.Station;
 import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 public interface StationService {

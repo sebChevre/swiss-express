@@ -1,13 +1,9 @@
-package ch.sebooom.lignesservice.infra.entity;
-
+package ch.sebooom.lignesservice.infra.graph.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.neo4j.ogm.annotation.*;
-
-import java.time.LocalTime;
-import java.util.List;
 
 @ToString
 @Setter
