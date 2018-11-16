@@ -5,10 +5,3 @@ spring:
   profiles:
     active: dev, init
 
-
-#logging:
-#  level:
-#    org.neo4j.ogm.drivers.bolt.request.BoltRequest: INFO
-#    org.springframework.data.neo4j: DEBUG
-#    org.springframework.data.neo4j.support.query: DEBUG
-#    org.neo4j.ogm: INFO

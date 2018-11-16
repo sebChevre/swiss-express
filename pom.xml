@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>swissexpress-lignes-service</module>
+        <module>swissexpress-horaires-service</module>
     </modules>
 
 
